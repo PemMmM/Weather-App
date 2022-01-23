@@ -12,13 +12,14 @@ exports[`ForecastSummary renders forecast summary for an individual day 1`] = `
     </div>
     <div
       class="forecast-summary__icon"
+      data-testid="forecast-icon"
     >
       stubIcon
     </div>
     <div
       class="forecast-summary__temperature"
     >
-      12°C
+      22°C
     </div>
     <div
       class="forecast-summary__description"
