@@ -24,29 +24,20 @@ App.propTypes = {
       data: PropTypes.number,
       description: PropTypes.string,
       icon: PropTypes.string,
+      humidity: PropTypes.number,
       temperature: PropTypes.shape({
         max: PropTypes.number,
         min: PropTypes.number,
+      }),
+      wind: PropTypes.shape({
+        speed: PropTypes.number,
+        direction: PropTypes.string,
       }),
     })
   ).isRequired,
   location: PropTypes.shape({
     city: PropTypes.string,
     country: PropTypes.string,
-  }).isRequired,
-  forecast: PropTypes.shape({
-    date: PropTypes.number,
-    description: PropTypes.string,
-    icon: PropTypes.number,
-    humidity: PropTypes.number,
-    wind: PropTypes.shape({
-      speed: PropTypes.number,
-      direction: PropTypes.string,
-    }),
-    temperature: PropTypes.shape({
-      max: PropTypes.number,
-      min: PropTypes.number,
-    }),
   }).isRequired,
 };
 
