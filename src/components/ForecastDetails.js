@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 // import moment from "moment";
 // import WeatherIcon from "react-icons-weather";
 
-function ForecastDetails({ forecast }) {
+function ForecastDetails(props) {
+  const { forecast } = props;
   const { temperature, wind, humidity } = forecast;
 
   return (
@@ -14,7 +15,8 @@ function ForecastDetails({ forecast }) {
       </div>
 
       <div className="forecast-details__wind">
-        {(wind.speed, wind.direction)}
+        {wind.speed}
+        {wind.direction}
       </div>
       <div className="forecast-details__humidity"> {humidity}</div>
     </div>
@@ -33,5 +35,17 @@ ForecastDetails.propTypes = {
     }),
   }).isRequired,
 };
+
+/* ForecastDetails.propTypes = {
+  humidity: PropTypes.number.isRequired,
+  wind: PropTypes.shape({
+    speed: PropTypes.number,
+    direction: PropTypes.string,
+  }).isRequired,
+  temperature: PropTypes.shape({
+    min: PropTypes.number,
+    max: PropTypes.number,
+  }).isRequired,
+}; */
 
 export default ForecastDetails;
