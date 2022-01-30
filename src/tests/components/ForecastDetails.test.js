@@ -20,7 +20,8 @@ describe("Forecast Details", () => {
   });
   it("render correct values for props", () => {
     const { getByText } = render(<ForecastDetails forecast={validProps} />);
-    expect(getByText(/30/g)).toHaveClass("forecast-details__humidity");
+    expect(getByText(/30/g)).toHaveClass("forecast-details__humidity"); // (//g looks for the value in global)
     expect(getByText(/12/g)).toHaveClass("forecast-details__temperature");
+    expect(getByText(/10s/g)).toHaveClass("forecast-details__wind");
   });
 });
