@@ -11,6 +11,7 @@ describe("ForecastSummary", () => {
       min: 12,
       max: 22,
     },
+    onSelect: () => {},
   };
 
   it("renders forecast summary for an individual day", () => {
@@ -20,19 +21,21 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders correct values for props", () => {
+  xit("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
 
@@ -42,5 +45,6 @@ describe("ForecastSummary", () => {
     );
     expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
     expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
+    expect()
   });
 });
