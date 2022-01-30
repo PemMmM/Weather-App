@@ -2,42 +2,25 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
 
-describe("ForecastDetails", () => {
+describe("Forecast Details", () => {
   const validProps = {
     temperature: {
-      min: 4,
-      max: 11,
+      min: 12,
+      max: 22,
     },
     wind: {
-      speed: 13,
+      speed: 10,
       direction: "s",
     },
     humidity: 30,
   };
-
-  xit("renders detailed forecast for an individual day", () => {
-    const { asFragment } = render(
-      <ForecastDetails
-        temperature={validProps.temperature}
-        wind={validProps.wind}
-        humidity={validProps.humidity}
-      />
-    );
-
-    expect(asFragment()).toMatchSnapshot();
+  it("it renders correctly", () => {
+    const { asFragment } = render(<ForecastDetails forecast={validProps} />);
+    expect(asFragment).toMatchSnapshot();
   });
-
-  it("renders correct values for props", () => {
-    const { getByText, getByTestId } = render(
-      <ForecastDetails
-        temperature={validProps.temperature}
-        wind={validProps.wind}
-        humidity={validProps.humidity}
-      />
-    );
-
-    expect(getByText("30")).toHaveClass("forecast-summary__humidity");
-    expect(getByTestId("13s")).toHaveClass("forecast-details__wind");
-    expect(getByText("11°C")).toHaveClass("forecast-details__temperature");
+  it("render correct values for props", () => {
+    const { getByText } = render(<ForecastDetails forecast={validProps} />);
+    expect(getByText(/30/g)).toHaveClass("forecast-details__humidity");
+    expect(getByText(/12/g)).toHaveClass("forecast-details__temperature");
   });
 });
