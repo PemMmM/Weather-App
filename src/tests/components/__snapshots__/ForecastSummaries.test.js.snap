@@ -12,13 +12,16 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__date"
       >
-        1111111
+        Thu 1st Jan
       </div>
       <div
         class="forecast-summary__icon"
         data-testid="forecast-icon"
       >
-        stubIcon1
+        <i
+          class="wi wi-day-sunny"
+          name="owm"
+        />
       </div>
       <div
         class="forecast-summary__temperature"
@@ -30,6 +33,11 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         Stub description 1
       </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
     <div
       class="forecast-summary"
@@ -38,13 +46,16 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__date"
       >
-        2222222
+        Thu 1st Jan
       </div>
       <div
         class="forecast-summary__icon"
         data-testid="forecast-icon"
       >
-        stubIcon2
+        <i
+          class="wi wi-day-snow"
+          name="owm"
+        />
       </div>
       <div
         class="forecast-summary__temperature"
@@ -56,6 +67,11 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         Stub description2
       </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
   </div>
 </DocumentFragment>

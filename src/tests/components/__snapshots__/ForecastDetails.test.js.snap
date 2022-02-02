@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Forecast Details it renders correctly 1`] = `[Function]`;
+exports[`Forecast Details it renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="forecast-details"
+    data-testid="forecast-details"
+  >
+    <div
+      class="forecast-details__temperature"
+    >
+      12°C
+    </div>
+    <div
+      class="forecast-details__wind"
+    >
+      10s
+    </div>
+    <div
+      class="forecast-details__humidity"
+    >
+       30
+    </div>
+  </div>
+</DocumentFragment>
+`;
