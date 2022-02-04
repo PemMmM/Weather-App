@@ -10,14 +10,14 @@ import "../styles/App.css";
 function App() {
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({ city: "", country: "" });
-  const [selectedDate, setSelectedDate] = useState(0);
+  const [selectedDate, setSelectedDate] = useState(forecasts[0]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     getForecast(searchText, setSelectedDate, setForecasts, setLocation);
   }, []);
 
-  const selectedForecast = forecasts?.find(
+  const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
 
@@ -33,8 +33,8 @@ function App() {
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
       <SearchForm
-        onSubmit={handleCitySearch}
         searchText={searchText}
+        onSubmit={handleCitySearch}
         setSearchText={setSearchText}
       />
       <ForecastSummaries

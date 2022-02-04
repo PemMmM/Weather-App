@@ -2,9 +2,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function SearchForm(searchText, setSearchText, onSubmit) {
-  const handleInputChange = (event) => setSearchText(event.target.value);
-
+function SearchForm({ searchText, setSearchText, onSubmit }) {
+  const handleInputChange = (event) => {
+    setSearchText(event.target.value);
+  };
   return (
     <div className="search-form">
       <input type="text" onChange={handleInputChange} value={searchText} />
