@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "@testing-library/react";
 import App from "../../components/App";
 
-xit("renders correctly", () => {
-  const { getByText } = render(<App />);
+it("renders correctly", () => {
+  const { asFragment } = render(<App />);
 
-  expect(getByText("Manchester, UK")).toHaveClass("location-details");
+  expect(asFragment()).toMatchSnapshot();
 });
