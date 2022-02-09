@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 import axios from "axios";
 
 const getForecast = (
@@ -15,6 +17,7 @@ const getForecast = (
   return axios
     .get(endpoint)
     .then((response) => {
+      setErrorMessage("");
       setSelectedDate(response.data.forecasts[0].date);
       setForecasts(response.data.forecasts);
       setLocation(response.data.location);
@@ -22,12 +25,12 @@ const getForecast = (
     .catch((error) => {
       const { status } = error.response;
       if (status === 404) {
-        setErrorMessage("No such town or city, try again!");
         console.error("Location is not valid", error);
+        setErrorMessage("No such town or city, try again!");
       }
       if (status === 500) {
-        setErrorMessage("Oops, server error, try again later.");
         console.error("Server error", error);
+        setErrorMessage("Oops, server error, try again later.");
       }
     });
 };

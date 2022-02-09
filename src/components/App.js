@@ -24,6 +24,10 @@ function App() {
     );
   }, []);
 
+  // useEffect(() => {
+  //   setErrorMessage("");
+  // }, [searchText]);
+
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
@@ -33,7 +37,13 @@ function App() {
   };
 
   const handleCitySearch = () => {
-    getForecast(searchText, setSelectedDate, setForecasts, setLocation);
+    getForecast(
+      searchText,
+      setSelectedDate,
+      setForecasts,
+      setLocation,
+      setErrorMessage
+    );
   };
 
   return (

@@ -9,19 +9,21 @@ function ForecastDetails(props) {
 
   return (
     <div className="forecast-details" data-testid="forecast-details">
-      <div className="forecast-details__temperature">
+      <span className="forecast-details__temperature">
         {temperature.min}
         &deg;C
-      </div>
+      </span>
 
-      <div className="forecast-details__wind">
+      <span classsName="forecast-details__wind">
         {wind.speed}
         {wind.direction}
-      </div>
-      <div className="forecast-details__humidity"> {humidity}</div>
+      </span>
+      <span className="forecast-details__humidity"> {humidity}</span>
     </div>
   );
 }
+
+// yukardaki spanlarin hepsi divdi unutma
 
 ForecastDetails.propTypes = {
   forecast: PropTypes.shape({

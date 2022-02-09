@@ -18,6 +18,7 @@ exports[`renders correctly 1`] = `
         value=""
       />
       <button
+        data-testid="searchbutton"
         type="submit"
       >
         Search
