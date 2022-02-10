@@ -8,12 +8,12 @@ function SearchForm({ searchText, setSearchText, onSubmit }) {
     setSearchText(event.target.value);
   };
   return (
-    <div className="search-form">
+    <span className="search-form">
       <input type="text" onChange={handleInputChange} value={searchText} />
       <button type="submit" onClick={onSubmit} data-testid="searchbutton">
         Search
       </button>
-    </div>
+    </span>
   );
 }
 

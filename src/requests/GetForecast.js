@@ -7,13 +7,16 @@ const getForecast = (
   setSelectedDate,
   setForecasts,
   setLocation,
-  setErrorMessage
+  setErrorMessage,
+  setLoading
 ) => {
   let endpoint = "https://mcr-codes-weather-app.herokuapp.com/forecast/";
 
   if (searchText) {
     endpoint += `?city=${searchText}`;
   }
+
+  setLoading(true);
   return axios
     .get(endpoint)
     .then((response) => {
@@ -32,6 +35,9 @@ const getForecast = (
         console.error("Server error", error);
         setErrorMessage("Oops, server error, try again later.");
       }
+    })
+    .finally(() => {
+      setLoading(false);
     });
 };
 

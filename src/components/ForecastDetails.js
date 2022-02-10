@@ -8,7 +8,7 @@ function ForecastDetails(props) {
   const { temperature, wind, humidity } = forecast;
 
   return (
-    <div className="forecast-details" data-testid="forecast-details">
+    <span className="forecast-details" data-testid="forecast-details">
       <span className="forecast-details__temperature">
         {temperature.min}
         &deg;C
@@ -19,7 +19,7 @@ function ForecastDetails(props) {
         {wind.direction}
       </span>
       <span className="forecast-details__humidity"> {humidity}</span>
-    </div>
+    </span>
   );
 }
 

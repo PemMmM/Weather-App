@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
@@ -13,6 +15,8 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(forecasts[0]);
   const [searchText, setSearchText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  const [isLoading, setLoading] = useState("true");
 
   useEffect(() => {
     getForecast(
@@ -20,7 +24,8 @@ function App() {
       setSelectedDate,
       setForecasts,
       setLocation,
-      setErrorMessage
+      setErrorMessage,
+      setLoading
     );
   }, []);
 
@@ -42,10 +47,13 @@ function App() {
       setSelectedDate,
       setForecasts,
       setLocation,
-      setErrorMessage
+      setErrorMessage,
+      setLoading
     );
   };
-
+  if (isLoading) {
+    return <PropagateLoader color="#36D7B7" loading={isLoading} size={30} />;
+  }
   return (
     <div className="weather-app">
       <LocationDetails
